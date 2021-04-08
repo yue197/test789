@@ -1,0 +1,778 @@
+* {
+	padding:0; /*通配符*/
+	margin:0;
+}
+li {
+	list-style:none; /*去掉列表项前面的小黑点*/
+}
+a {
+	text-decoration:none; /*去掉所有链接的下划线*/
+}
+.clearfloat:after { /*万能清浮动 清除浮动对后方布局的影响，解决高度塌陷问题*/
+	display:block; /*转换行内元素为块元素*/
+	clear:both; /*清除左右浮动*/
+	content:""; /*内容为空*/
+	height:0; /*高度为0*/
+	line-height:0; /*行高为0*/
+	visibility:hidden; /*元素隐藏*/
+	overflow:hidden; /*溢出部分的内容隐藏*/
+}
+.clearfloat:after {
+	zoom:1; /*针对IE6/7版本设置的清浮动*/
+}
+.ZhengGeYeMian {
+	width:1349px; /*整个网页的宽度*/
+	height:3039px; /*整个网页的高度*/
+	margin:0 auto; /*整个页面水平居中*/
+}
+.logo,.left,.center,.right {
+	float:left; /*所有头部的盒子全部左浮动*/
+}
+.TouBu {
+	width:1000px;/*头部的宽度*/
+	padding:20px 174px 21px 175px;/*头部的外边距*/
+}
+.TouBu .logo {
+	width:151px;/*头部里的图标宽度*/
+	height:37px;/*头部里的图标高度*/
+	margin-right:42px; /*图标右侧外边距*/
+}
+.TouBu .left {
+	width:300px;/*头部里文本框盒子的宽度*/
+	height:36px;/*头部里文本框盒子的高度*/
+	position:relative;/*文本框相对定位*/
+
+}
+.TouBu .left input {
+	padding-left:10px; /*内边距为10*/
+	width:290px;/*文本框的高度*/
+	height:36px;/*文本框的宽度*/
+	outline:none;/*去掉点击时的蓝色边框*/
+}
+.TouBu .left span {
+	width:14px; /*插入精灵图必须设置宽高*/
+	height:14px;
+	display:inline-block;/*插入精灵图必须保证元素类型为行内块元素*/
+	cursor:pointer; /*让按钮指向的时候由原来的箭头变成手*/
+	background:url(../img/2.png) no-repeat;/*插入的精灵图的地址 不重复出现*/
+	position:absolute;/*文本框后面的放大镜搜索键进行绝对定位*/
+	top:10px;/*距离文本框上方10px*/
+	right:12px;/*距离文本框右方12px*/
+}
+.TouBu .left span:hover {
+	background:url(../img/2.png) no-repeat 0 -14px; /*悬停时改变精灵图 不重复 要出现的精灵图的位置*/
+}
+.TouBu .center {
+	width:237px;/*头部链接盒子的宽度*/
+	height:37px;/*头部链接盒子的高度*/
+	margin:0 30px 0 119px;/*头部链接盒子的外边距*/
+}
+.TouBu .center a {
+	font-size:12px;/*头部链接的字体大小*/
+	color:#777;/*字体颜色*/
+	line-height:37px; /*行高等于盒子高度 垂直居中*/
+	margin-right:24px; /*链接的右侧外边距*/
+}
+.TouBu .center a:hover {
+	color:#009af3; /*链接悬停时的字体颜色*/
+}
+.TouBu .center span {
+	color:#e6e6e6; /*头部链接后侧的|的颜色*/
+}
+.TouBu .right {
+	width:110px; /*头部按钮盒子的宽度*/
+	height:37px; /*头部按钮盒子的高度*/
+	line-height:37px;/*让两个按钮垂直居中*/
+}
+.TouBu .right input {
+	width:50px; /*两个按钮的宽度*/
+	height:30px; /*两个按钮的高度*/
+	cursor:pointer; /*让按钮指向的时候由原来的箭头变成手*/ 
+}
+.TouBu .right .DengLu {
+	background-color:#169af3; /*登录按钮的背景颜色*/
+	border:none; /*去掉边框*/
+	color:#fff; /*字体颜色为白色*/
+}
+.TouBu .right .ZhuCe {
+	color:#777; /*注册按钮的字体颜色*/
+	border:1px solid #dbdbdb; /*边框为1px 实线 颜色*/
+	background-color:#fff; /*注册按钮的背景颜色*/
+}
+.TouBu .right .DengLu:hover {
+	background-color:#158fe1; /*登录按钮悬停时背景颜色*/
+}
+.TouBu .right .ZhuCe:hover {
+	border-color:#158fe1; /*注册按钮悬停时边框颜色*/
+	color:#158fe1;  /*注册按钮悬停时字体颜色*/
+}
+.nav {
+	width:1000px; /*导航栏的总宽度*/
+	height:55px; /*导航栏的总高度*/
+	background-color:#2c323b; /*总导航栏的背景*/
+	padding:0 174px 0 175px; /*总导航栏的左右内边距*/
+}
+.nav li {
+	float:left; /*左侧导航栏的所有列表项左浮动*/
+	width:92px; /*列表项宽度为92*/
+	text-align:center; /*列表项文本居中*/
+	position:relative; /*列表项进行相对定位*/
+}
+.nav .ShouYe {
+	background-color:#0c8ed9;/*首页的背景色*/
+}
+.nav .ShouYe>a {
+	color:#fff;/*首页下的a链接字体颜色*/
+}
+.nav .XiaZaiKeHuDuan {
+	width:140px; /*下载客户端宽度为140*/
+}
+.nav .gengDuo {
+ 	width:113px; /*更多宽度为113*/
+}
+.nav li>a {
+	display:inline-block; /*转换元素类型让行内元素可以设置宽高，并在一行显示*/
+	width:92px; /*设置宽度和列表项的宽度一样就可以实现指向空白地方也可以选中链接并且变成小手*/
+	height:55px;/*列表项的高度*/
+	line-height:56px; /*行高，垂直居中*/
+	font-size:16px; /*列表项字体大小*/
+	color:#dddddd; /*列表项字体颜色*/
+}
+.nav .XiaZaiKeHuDuan>a {
+	display:inline-block; /*下载客户端变成行内块元素*/
+	width:140px; /*宽度140*/
+}
+.nav .gengDuo>a {
+	display:inline-block; /*更多变成行内块元素*/
+	width:113px; /*宽度为113*/
+}
+.nav dd>a {
+	display:inline-block;/* 转换元素类型让行内元素可以设置宽高，并在一行显示*/
+	width:113px; /*设置宽度和列表项的宽度一样就可以实现指向空白地方也可以选中链接并且变成小手*/
+	height:36px; /*自定义列表项的高度*/
+	line-height:36px; /*行高等于高内容垂直居中*/
+	color:#dddddd; /*自定义列表项字体颜色*/
+	padding-left:-30px;/* 左边的内边距*/
+}
+.nav .span1 {
+	display:inline-block; /*转换元素类型为行内块元素*/
+	width:11px; /*更多后面精灵图的大小（宽高）*/
+	height:10px;
+	margin-left:11px; /*左侧外边距为11*/
+	background:url(../img/5.png) no-repeat 0 2px; /*插入精灵图 不重复 垂直向上2px*/
+}
+.nav dl {
+	display:none; /*隐藏二级菜单*/
+	background-color:#2c323b; /*二级菜单背景颜色*/
+	position:absolute; /*二级菜单绝对定位 定位点是整个导航栏*/
+	top:55px; /*距离上方55像素*/
+}
+.nav li:hover .span1 {
+	background:url(../img/5.png) no-repeat 0 -6px; /*菜单悬停更换精灵图*/
+}
+.nav .gengDuo:hover dl {
+	display:block;/*出现二级菜单*/
+}
+.nav dl dd>a:hover {
+	color:#fff; /*悬停二级菜单字体颜色*/
+	background-color:#3c4550; /*悬停背景颜色*/
+}
+.nav li:hover {
+	background-color:#0c8ed9; /*悬停导航栏链接颜色*/
+	/*color:#fff;*/ /*链接字体颜色为白色*/
+}
+.nav li>a:hover {
+	color:#fff; /*链接字体颜色为白色*/
+}
+.nav .nav_right {
+	float:right; /*整个盒子向右浮动*/
+	width:442px; /*给所有链接放在一个大盒子里面给它设置宽度*/
+	height:55px; /*设置高度*/
+	line-height:55px; /*行高等于盒子高度，内容垂直居中*/
+}
+.nav .nav_right a {
+	width:73px; /*a链接大小*/
+	height:15px;
+	font-size:13px;/* a链接字体大小*/
+	color:#ddd;  /*a链接字体颜色*/
+}
+.nav .nav_right span {
+	padding-right:7px; /*精灵图距离a链接的右侧内边距为7*/
+}
+.nav .nav_right .a1,.a2,.a3,.a4 {
+	margin-right:25px; /*前四个a链接右边距为25*/
+}
+.nav .nav_right span {
+	display:inline-block; /*转换a标签前面精灵图的元素类型为行内块元素*/
+	width:13px; /*设置精灵图的宽高*/
+	height:12px;
+	background:url(../img/3.png) no-repeat; /*插入精灵图*/
+}
+.nav .nav_right .span3 {
+	background:url(../img/3.png) no-repeat 0 -13px; /*对应精灵图位置*/
+}
+.nav .nav_right .span4 {
+	background:url(../img/3.png) no-repeat 0 -24px; /*对应精灵图位置*/
+}
+.nav .nav_right .span5 {
+	background:url(../img/3.png) no-repeat 0 -36px; /*对应精灵图位置*/
+}
+.nav .nav_right .span6 {
+	background:url(../img/3.png) no-repeat 0 -49px; /*对应精灵图位置*/
+}
+.nav .nav_right a:hover {
+	color:#14a9ff; /*a链接悬停时字体的颜色*/
+}
+.nav .nav_right a:hover .span2 {
+	background:url(../img/4.png) no-repeat; /*对应精灵图悬停时的位置*/
+}
+.nav .nav_right a:hover .span3 {
+	background:url(../img/4.png) no-repeat 0 -13px; /*对应精灵图悬停时的位置*/
+}
+.nav .nav_right a:hover .span4 {
+	background:url(../img/4.png) no-repeat 0 -24px; /*对应精灵图悬停时的位置*/
+}
+.nav .nav_right a:hover .span5 {
+	background:url(../img/4.png) no-repeat 0 -36px; /*对应精灵图悬停时的位置*/
+}
+.nav .nav_right a:hover .span6 {
+	background:url(../img/4.png) no-repeat 0 -49px; /*对应精灵图悬停时的位置*/
+}
+.TuPian img {
+	float:left;/*图片左浮动 防止和下一个盒子之间有空隙*/
+}
+.box {
+	float:left; /*内容外面最大的盒子左浮动 防止和下一个盒子之间有空隙*/
+	width:1001px; /*内容外面最大的盒子设置宽高*/
+	height:2041px;
+	margin:0 173px 0 175px;/*内容外面最大的盒子的外边距*/
+}
+.box .box1 {
+	width:1001px; /*第一个盒子的总大小*/
+	height:480px;
+}
+.box1 .left {
+	width:651px; /*第一个盒子里左边盒子的大小*/
+	height:385px;
+}
+.box1 .left .left_1 {
+	width:651px; /*第一个盒子左边盒子的上边盒子的大小*/
+	height:60px;
+	line-height:60px;  /*内容垂直居中*/
+}
+.box1 .left .left_1 .a5 {
+	float:left; /*精选歌单里的精选左浮动*/
+	font-size:29px; /*字体大小*/
+	color:#3448da; /*字体颜色*/
+}
+.box1 .left .left_1 .a6 {
+	float:left; /*精选歌单里的歌单左浮动*/
+	font-size:29px;/*字体大小29 颜色默认黑色*/
+	color:#545454;/*字体颜色*/
+}
+.box1 .left .left_1 .a7 {
+	float:right; /*更多右浮动*/
+	font-size:15px; /*字体大小15*/
+	color:#999; /*字体颜色*/
+}
+.box1 .a5:hover,.box1 .a6:hover {
+	cursor:default; /*精选歌单链接悬停的时候小手变成默认箭头的样式*/
+}
+.box1 .left .left_1 .a7:hover,.box1 .right .right_1 .a7:hover {
+	color:#009af3; /*后面的小的更多悬停时的字体颜色*/
+}
+.box1 .left .left_2 {
+	width:650px; /*第一个盒子里最大的图片的盒子宽度650*/
+}
+.box1 .left .left_2 img {
+	float:left; /*最大的图片左浮动*/
+}
+.box1 .left .left_3 {
+	width:320px; /*第一个盒子里装四张小图片的盒子的宽度*/
+	float:right;
+}
+.box1 .left .left_3 img {
+	float:left; /*四张小图片右浮动*/
+}
+.box1 .left .left_3 .img1,.img2 {
+	padding-bottom:5px; /*第一张和第二张小图片的下边距为5px*/
+}
+.box1 .left .left_3 .img1,.img3 {
+	padding-right:5px; /*第一张和第三张小图片的右边距为5px*/
+}
+.box1 .right {
+	width:321px; /*热门榜单的大盒子的大小*/
+	height:385px;
+	float:right; /*盒子整体右浮动*/
+}
+.box1 .right .right_1 {
+	width:321px; /*上方链接盒子的大小*/
+	height:60px;
+	line-height:60px;/*行高垂直居中*/
+}
+.box1 .right .right_1 .a5 {
+	float:left; /*精选歌单里的精选左浮动*/
+	font-size:29px; /*字体大小*/
+	color:#3448da; /*字体颜色*/
+}
+.box1 .right .right_1 .a6 {
+	float:left; /*精选歌单里的歌单左浮动*/
+	font-size:29px;/*字体大小29 颜色默认黑色*/
+	color:#545454;/*字体颜色*/
+}
+.box1 .right .right_1 .a7 {
+	float:right; /*更多右浮动*/
+	font-size:15px; /*字体大小15*/
+	color:#999; /*字体颜色*/
+}
+.box1 ul {
+	width:320px; /*榜单总大小*/
+	height:324px;
+}
+.right li {
+	width:322px; /*第一个榜单的大小*/
+	height:98px;
+	position:relative;/*给第一个榜单设置相对定位*/
+}
+.box1 li strong {
+	position:absolute; /*插入图标 给图标设置一个绝对定位*/
+	left:302px; /*距离第一个li左边302*/
+	top:42px; /*距离第一个li右边42*/
+	width:11px; /*精灵图（图标）的宽度11*/
+	height:13px; /*高度13*/
+	background:url(../img/12.png) no-repeat; /*插入背景图（图标） 不重复*/
+}
+.box1 .list_left img {
+	display:block;
+	float:left; /*左侧图片左浮动*/
+}
+.box1 .list_right {
+	width:174px; /*右侧盒子内容的宽高*/
+	height:71px;
+	background:#f6f6f6; /*背景颜色*/
+	float:left; /*内容左浮动*/
+	line-height:24px; /*行高*/
+	padding:12px 39px 15px 10px; /*内边距*/
+}
+.box1 .list_right h3>a {
+	font-size:14px; /*标题字体大小*/
+	color:black; /*字体颜色*/
+}
+.box1 .list_right p>a {
+	font-size:13px; /*段落字体大小*/
+	color:black; /*字体颜色*/
+}
+.box1 .shade_1 {
+	width:98px; /*遮罩层的大小*/
+	height:98px;
+	background:black; /*背景颜色*/
+	position:absolute; /*相对于li进行的绝对定位*/
+	top:0;
+	left:0;
+	opacity:0.4; /*透明度*/
+}
+.box1 .shade_2 {
+	position:absolute; /*相对于li进行的绝对定位*/
+	top:31px; /*距离上方*/
+	left:31px; /*距离左边*/
+	opacity:0.8; /*透明度*/
+}
+.box1 .shade_1,.shade_2 {
+	display:none; /*让遮罩层消失*/
+}
+.box1 li:hover .shade_1 {
+	display:block; /*让遮罩层出现*/
+}
+.box1 li:hover .shade_2 {
+	display:block; /*上方图片出现*/
+}
+.box1 .list {
+	margin:16px 0; /*第二个li的上下外边距为15*/
+}
+.box1 .bottom img {
+	float:left; /*第一个盒子的下方图片左浮动*/
+	margin-top:15px; /*距离上方外边距15*/
+}
+.box2 {
+	width:650px;
+	float:left;
+}
+.box2 .songlist_top {
+	width:650px; /*新歌首发的上边盒子的大小*/
+	height:31px;
+	padding-top:40px; /*上内边距*/
+	padding-bottom:19px; /*下内边距*/
+	border-bottom:1px solid #f0f0f0; /*下边框1px 实线 颜色*/
+	position:relative; /*相对定位（对于自身定位）不改变元素类型*/
+}
+.song_a {
+	width:112px;  /*上边盒子里的新歌首发盒子的大小*/
+	float:left; /*整个盒子左浮动*/
+}
+.song_a span {
+	font-size:27px; /*“新歌”的字体大小*/
+	float:left;/* 左浮动*/
+	color:#009bf2; /*字体颜色*/
+}
+.song_a p {
+	font-size:27px; /*“首发”的字体大小*/
+	float:left; /*左浮动*/
+	color:#555555; /*字体颜色*/
+}
+.song_b {
+	padding-left:145px;/* “华语 欧美 韩国。。”的盒子距离整个盒子的左侧内边距为145*/
+	width:210px;/* “华语 欧美 韩国。。”盒子的宽度*/
+	padding-top:9px;/* 上方内边距为9*/
+	padding-bottom:9px; /*距离下方9*/
+}
+.song_b a {
+	font-size:14px; /*“华语 欧美 韩国。。”的字体大小*/
+	padding:0 10px; /*距离左右10像素外边距*/
+	color:black; /*“华语 欧美 韩国。。”的字体颜色*/
+}
+.song_c {
+	position:absolute; /*给全部播放一个绝对定位*/
+	top:45px; /*距离上方40*/
+	right:0; /*距离右边0*/
+	width:89px; /*盒子的宽度*/
+	text-align:center; /*文本居中*/
+	border:1px solid #dbdbdb; /*边框大小，颜色，类型*/
+}
+.song_c a {
+	display:inline-block;
+	width:85px;
+	font-size:13px; /*全部播放的字体大小*/
+	line-height:29px; /*行高等于高文本垂直居中*/
+	margin-left:10px; /*左侧外边距*/
+	color:#555; /*字体颜色*/
+}
+.songlist_top strong {
+	position:absolute;
+	top:54px;
+	left:570px;
+	display:inline-block;/*转换元素类型*/
+	width:12px; /*设置宽高*/
+	height:14px;
+	background:url(../img/20.png) no-repeat 0 0;/*插入背景图*/
+}
+.songlist_center ul {
+	width:650px; /*下方歌单的宽度和高度*/
+	height:295px;
+}
+.songlist_center li {
+	width:640px; /*每个列表项的宽度*/
+	margin-top:10px; /*距离上方外边距10*/
+}
+.songlist_center li a {
+	float:left; /*所有歌名左浮动*/
+	width:640px; /*链接的宽高*/
+	padding:13px 0 13px 10px; /*距离上下13 左右10像素内边距*/
+	font-size:13px; /*歌名字体大小*/
+	color:#333; /*字体颜色*/
+	line-height:10px; /*行高*/
+}
+.songlist_center li span {
+	float:right; /*所有数字右浮动*/
+}
+.songlist_bottom {
+	width:61px; /*页码的宽度*/
+	margin:0 299px 0 290px; /*外边距左右*/
+}
+.songlist_bottom a {
+	font-size:7px; /*页码的字体大小*/
+	color:#777; /*字体颜色*/
+}
+.song_a a:hover {
+	cursor:default;/*新歌首发悬停时手变成箭头*/
+}
+.song_b a:hover {
+	color:#009af4;/* “华语 欧美 韩国。。”悬停时的字体颜色*/
+}
+.song_c:hover {
+	border-color:#009af4; /*全部播放的盒子悬停时边框的颜色*/
+}
+.song_c a:hover {
+	color:#009af4; /*全部播放的盒子悬停时的字体颜色*/
+}
+.songlist_top strong:hover{
+	background:url(../img/20.png) no-repeat -12px 0; /*背景图片悬停时变化另一张图片*/
+}
+.songlist_center li a:hover {
+	color:#009af4; /*歌名悬停时的字体颜色*/
+	background-color:#f5f8fb; /*背景颜色*/
+}
+.recommend {
+	float:left; /*推荐MV的整个大盒子左浮动*/
+	width:320px; /*整个盒子的宽度*/
+	margin-left:30px; /*距离左边30px*/
+	margin-top:42px; /*距离上方42px*/
+}
+.recommend_a {
+	float:left; /*“推荐MV”向左浮动*/
+	width:320px; /*设置宽高*/
+	height:49px;
+}
+.recommend_b {
+	font-size:28px; /*“推荐MV”的字体大小*/
+	color:#28a3f3; /*“推荐”字体颜色*/
+}
+.recommend_b span {
+	color:#555; /*“MV”的字体颜色*/
+}
+.recommend_c {
+	padding-top:9px; /*“更多”两个字距离上方外边距9*/
+	float:right; /*“更多”两个字右浮动*/
+	color:#999; /*“更多”字体颜色*/
+	font-size:14px; /*“更多字体大小”*/
+}
+.recommend_d {
+	width:320px; /*图片下面的文字盒子的总宽度*/
+}
+.recommend_a .recommend_b:hover {
+	cursor:default; /*“推荐MV”悬停时小手变成箭头*/
+}
+.recommend_c:hover {
+	color:#009af3; /*“更多”悬停时字体颜色*/
+}
+.Custom_a {
+	float:left; /*左边的左浮动*/
+}
+.Custom_a a {
+	font-size:10px; /*左边上边字的大小和颜色*/
+	color:#444;
+}
+.Custom_a dd {
+	font-size:8px; /*左边下边字的大小和颜色*/
+	color:#888;
+}
+.Custom_b {
+	float:right; /*右边的右浮动*/
+}
+.Custom_b a {
+	font-size:14px; /*右边上边字的大小颜色*/
+	color:#444;
+}
+.Custom_b dd {
+	font-size:12px; /*右边上边字的大小颜色*/
+	color:#888;
+}
+.Custom_a dt a:hover {
+	color:#009af3; /*左边上边的字悬停时字体的颜色*/
+}
+.Custom_b dt a:hover {
+	color:#009af3; /*右边上边的字悬停时字体的颜色*/
+}
+.Custom_c {
+	clear:both;
+}
+.Custom_c img {
+	margin-top:48px; /*下边图片距离上方的外边距为48*/
+	float:left;/*图片左浮动*/
+}
+.station_c {
+	width:649px;  /*左边“电台”盒子的大小*/
+	float:left; /*向左浮动*/
+}
+.station {
+	width:649px; /*“热门电台”和“更多”的盒子的大小*/
+	height:28px;
+	padding:41px 0 31px 0; /*“热门电台”和“更多”的盒子的内边距*/
+}
+.station_a {
+	float:left; /*“热门电台”左浮动*/
+	font-size:28px;/* 字体大小28*/
+	color:#4b7e99; /*字体颜色*/
+}
+.station_a span {
+	color:#3a3a3a;/* “电台”字体颜色*/
+}
+.station_b {
+	float:right; /*“更多”右浮动*/
+}
+.station_b {
+	padding-top:10px; /*“更多”距离上方内边距10*/
+	font-size:13px; /*“更多”字体大小*/
+	color:#939393; /*字体颜色*/
+}
+.station_img {
+	width:649px; /*“电台”盒子的总大小*/
+	height:282px;
+}
+.station_img dl {
+	float:left; /*“电台”下的图片左浮动*/
+	line-height:22px; /*字体行高*/
+	margin-bottom:25px; /*距离下方外边距25*/
+}
+.station_img dd {
+	text-align:center; /*“电台”图片下的问题水平居中*/
+	font-size:14px; /*字体大小*/
+}
+.station_img dd a {
+	color:#20171a;
+}
+.station_img .dt1,.dt2,.dt3,.dt4 {
+	margin-right:37px; /*“电台图片”第一行图片右侧外边距37*/
+}
+.station_img .dt5,.dt6,.dt7,.dt8 {
+	margin-right:37px; /*“电台图片”第二行图片右侧外边距37*/
+}
+.singer {
+	width:320px; /*“热门歌手”的盒子的大小*/
+	padding:41px 0 31px 0; /*盒子的内边距*/
+	float:right; /*盒子右浮动*/
+}
+.singer_a {
+	font-size:28px;/* “热门歌手”的字体大小*/
+	line-height:28px; /*垂直居中*/
+	color:#3989a4; /*字体颜色*/
+}
+.singer_a span {
+	color:#505050; /*“歌手”字体颜色*/
+}
+.singer_b {
+	display:inline-block;/* “华语” “欧美” “日韩”转变元素类型*/
+	font-size:14px;/* 字体大小14px*/
+}
+.singer_b a {
+	color:#070200; /*“华语” “欧美” “日韩”字体颜色*/
+}
+.singer_c {
+	font-size:14px; /*“更多”字体大小*/
+	float:right; /*“更多”右浮动*/
+	margin-top:9px; /*上边外边距9px*/
+	color:#a0a0a0; /*“更多”字体颜色*/
+}
+.singer_d {
+	margin-top:31px;/* 右侧图片上边外边距31px*/
+}
+.station_a:hover {
+	cursor:default; /*"热门电台"悬停时手变成剪头*/
+}
+.station_b:hover {
+	color:#009af3; /*“更多”悬停时字体颜色*/
+}
+.station_img dd a:hover {
+	color:#009af3; /*“电台”下面的字悬停时的字体颜色*/
+}
+.singer_a:hover {
+	cursor:default; /*“热门歌手”悬停时手变成剪头*/
+}
+.singer_b a:hover {
+	color:#009af3; /*“华语” “欧美” “日韩” 悬停时字体颜色*/
+}
+.singer_c:hover {
+	color:#009af3; /*“更多”悬停时字体颜色*/
+}
+.box4 {
+	width:1000px;/*“合作伙伴”整体盒子的宽度*/
+	margin-top:8px; /*上方外边距8px*/
+}
+.partner {
+	width:1000px;/* “合作伙伴”盒子的大小*/
+	height:88px; 
+	line-height:88px; /*行高垂直居中*/
+}
+.partner a {
+	font-size:28px; /*“合作伙伴”字体大小*/
+	color:#3989a4;/* “合作”字体颜色*/
+}
+.partner a span {
+	color:#525252;/* “伙伴”字体颜色*/
+}
+.partner_a a{
+	float:left;/* 下面图片左浮动*/
+	font-size:0; /*取消图片下方4像素*/
+	margin-right:5px; /*右面外边距5*/
+	margin-left:5px; /*左边外边距5*/
+	margin-top:12px; /*上边外边距12*/
+}
+.partner a:hover {
+	cursor:default; /*“合作伙伴”悬停时小手变成箭头*/
+}
+.partner_a a:hover {
+	cursor:default; /*“合作伙伴”悬停时小手变成箭头*/
+}
+.box5 {
+	width:1000px; /*"友情链接大盒子的宽度"*/
+}
+.blogroll {
+	width:1000px; /*“友情链接”和“更多”的大小*/
+	height:70px;
+}
+.blogroll .blogroll_a {
+	font-size:28px; /*“友情链接”的字体大小*/
+	color:#009af4; /*字体颜色*/
+	float:left; /*左浮动*/
+}
+.blogroll span {
+	color:#555555; /*“链接”字体颜色*/
+}
+.blogroll a {
+	line-height:70px; /*“友情链接”和“更多”文本垂直居中*/
+}
+.blogroll .blogroll_b {
+	font-size:14px;/* “更多”字体大小*/
+	color:#999; /*字体颜色*/
+	float:right; /*“更多右浮动”*/
+}
+.blogroll_c {
+	width:1000px; /*“下方链接”盒子的小*/
+}
+.blogroll_c a {
+	display:inline-block; /*转换元素类型为行内块元素*/
+	width:125px; /*每个链接宽度*/
+	float:left; /*左浮动*/
+	color:#555; /*字体颜色*/
+	font-size:13px; /*字体大小*/
+	line-height:44px; /*行高*/
+}
+.blogroll_a:hover {
+	cursor:default; /*“友情链接”悬停时小手变成箭头*/
+}
+.blogroll_b:hover {
+	color:#009af3;/* “更多”悬停时字体颜色*/
+}
+.blogroll_c a:hover {
+	color:#009af3; /*下方链接悬停时的颜色*/
+}
+.box7 {
+	width:1350px; /*尾部整个盒子大小*/
+	height:422px;
+	padding-top:15px; /*上方内边距15*/
+	background-color:#2c323b; /*背景颜色*/
+	clear:both; /*清除左右浮动*/
+	margin-left:-176px; /*距离右边外边距*/
+}
+.tali {
+	width:984px; /*上方链接盒子的大小*/
+	height:48px;
+	padding:0 182px; /*左右内边距水平居中*/
+	border-bottom:1px solid #3d424a; /*下边框*/
+}
+.tali a {
+	font-size:10px; /*链接字体大小*/
+	line-height:48px; /*行高垂直居中*/
+	color:#b1b3b9; /*链接字体颜色*/
+}
+.tali span {
+	color:#93b39d;/* “|”字体颜色*/
+}
+.tali a:hover {
+	color:#009af3;/* 链接悬停时字体颜色*/
+}
+.tali_a {
+	width:793px; /*最后尾部字体大小*/
+	height:200px; 
+	margin:39px 279px 57px 277px;/*最后尾部盒子的外边距*/
+}
+.tali_a p {
+	font-size:13px; /*字体大小*/
+	line-height:35px; /*行高*/
+	text-align:center; /*文本居中*/
+	color:#b1b3b9;/* 字体颜色*/
+}
+.fixed img {
+	position:fixed; /*图片固定定位*/
+	bottom:25px; /*距离下方25*/
+	right:104px; /*距离右边104*/
+}
